@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+#Start{
+    color:rgb(27, 92, 196);
+    background-color: rgb(8, 231, 49);
+    
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 70%;
+    text-size-adjust: 50%;
+    
+}
+#Stop{
+    color: rgb(16, 132, 204);
+    background-color: rgb(223, 52, 10);
+    
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 70%;
+    text-size-adjust: 50%;
+}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color_Change_Automatic</title>
+    <link rel="stylesheet" href="light.css">
+</head>
+<body>
+    <H1 class="top"> CLICK FOR CHNAGE THE BACKGROUND COLOR AUTOMATIC</H1>
+    
+    <button id="Start">Start</button>
+    <button id="Stop">Stop</button>
+
+    <H1 class="mid"> CLICK FOR SONG</H1>
+    <br>
+    <div class="music" >
+    
+        <audio src="old_Mrityudaata-Na Na Na Re.mp3" controls>
+          Your browser does not support the audio element.
+          </audio>
+
+          <audio src="ayogi-309.mp3" controls>
+            Your browser does not support the audio element.
+            </audio>
+     
+      
+    </div>
+    
+    
+    <script>
+      const startbtn = document.getElementById("Start");
+      const stopbtn =document.getElementById("Stop") ;
+      const topbtn= document.querySelector(".top");
+      const midbtn= document.querySelector(".mid");
+      let intervalid;
+      
+      document.body.style.backgroundColor=localStorage.getItem("backgroundcolor");
+      
+      startbtn.addEventListener("click",()=>{
+        let colorcode="0123456789abcdef";
+        
+        intervalid= setInterval( ()=>{
+            let newcolor="#";
+            for(let i=0;i<6;i++){
+                newcolor +=colorcode[Math.floor(Math.random()*16)];
+            }
+            document.body.style.backgroundColor=newcolor;
+           topbtn.style.backgroundColor="white";
+           midbtn.style.backgroundColor="white";
+            localStorage.setItem("backgroundcolor",newcolor);
+        },
+        300);
+       
+      });
+      
+      
+      stopbtn.addEventListener("click",()=>{
+        clearInterval(intervalid);
+      });
+    </script>
+</body>
+</html>
